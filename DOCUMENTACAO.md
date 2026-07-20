@@ -1,17 +1,14 @@
-# Relatório de Análise: Monitoramento de Autenticação
+## 🛡️ Monitoramento e Detecção de Incidentes
 
-## 1. Objetivo
-Analisar logs do sistema operacional Linux para identificar tentativas de acesso e garantir a integridade do ambiente.
+Nesta etapa, configurei um filtro de monitoramento para identificar tentativas de acesso não autorizadas no sistema. 
 
-## 2. Cenário de Logs
-Filtro utilizado no Kibana: `event.dataset : "system.auth"`
+### Filtro de Detecção
+Utilizei a seguinte query de consulta para isolar eventos de falha de autenticação:
+`event.dataset : "system.auth" AND event.outcome : "failure"`
 
-## 3. Análise Observada
-Durante o monitoramento, foram identificados logs de autenticação do usuário. 
-- **Padrão detectado**: Registro contínuo de eventos de login no sistema.
-- **Importância**: O monitoramento deste log é fundamental para detectar ataques de força bruta (brute-force) ou acessos não autorizados.
+### Evidência de Monitoramento
+Abaixo, o print do Kibana demonstrando a captura desses eventos em tempo real:
 
-## 4. Próximos Passos (Hardening)
-Para melhorar a segurança deste ambiente, as próximas ações recomendadas são:
-- Implementar chaves SSH em vez de senhas.
-- Configurar o Fail2Ban para bloquear IPs com excesso de tentativas de login.
+![Monitoramento de Falhas](print-kibana.jpeg)
+
+*Nota de Segurança: Os dados sensíveis de identificação do agente e do sistema foram anonimizados para garantir as boas práticas de proteção de dados.*
