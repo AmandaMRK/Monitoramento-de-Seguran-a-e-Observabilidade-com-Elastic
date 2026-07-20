@@ -40,3 +40,8 @@ Este gráfico demonstra a validação bem-sucedida do nosso sistema de detecçã
 * **Por que isso é importante:** Monitorar o `sudo` é essencial para detectar tentativas de manipulação do sistema por usuários não autorizados.
 
 ![Monitoramento sudo](monitoramento_sudo.jpeg)
+
+### Evidência de Detecção
+Abaixo está o print que confirma a detecção de execução de comandos privilegiados (sudo) pelo Elastic Security:
+
+![Evidência do Alerta de Segurança](print_alerta.jpeg)
