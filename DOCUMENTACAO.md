@@ -30,3 +30,13 @@ Este gráfico demonstra a validação bem-sucedida do nosso sistema de detecçã
 
 ![Legenda do Gráfico](grafico_falhas_autenticacao.jpeg)
 
+
+## Monitoramento de Processos Críticos
+* **Objetivo:** Identificar o uso de comandos que elevam privilégios, como o `sudo`.
+* **Filtro KQL:** `event.category : "process" AND process.name : "sudo"`
+* **Explicação técnica:**
+    * `event.category : "process"`: Filtra apenas eventos classificados como execução de programas pelo ECS (Elastic Common Schema).
+    * `process.name : "sudo"`: Especifica o monitoramento apenas para o comando sudo.
+* **Por que isso é importante:** Monitorar o `sudo` é essencial para detectar tentativas de manipulação do sistema por usuários não autorizados.
+
+![Monitoramento sudo](monitoramento_sudo.jpeg)
