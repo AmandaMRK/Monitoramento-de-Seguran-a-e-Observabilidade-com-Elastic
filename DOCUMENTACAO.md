@@ -19,3 +19,14 @@ Abaixo, o print do Kibana demonstrando a captura desses eventos em tempo real:
 Visualização gráfica das tentativas de acesso, permitindo identificar padrões de falhas (`event.outcome: failure`).
 
 ![Dashboard de Falhas](dashboard-falhas.jpeg)
+
+### Monitoramento de Segurança: Falhas de Autenticação
+
+Este gráfico demonstra a validação bem-sucedida do nosso sistema de detecção de ameaças no Elastic. 
+* **O que foi feito:** Configuramos uma regra de detecção no SIEM para identificar tentativas de login falhas (`event.outcome: failure`) nos logs do sistema (`system.auth`).
+* **Validação:** Realizamos um teste de intrusão local via terminal, simulando logins incorretos para os usuários 'root' e 'amk'.
+* **Resultado:** O sistema detectou o comportamento, gerou alertas em tempo real e os consolidou neste painel, permitindo a identificação imediata dos alvos (usuários) e da frequência das tentativas.
+
+
+![Legenda do Gráfico](grafico_falhas_autenticacao.jpeg)
+
